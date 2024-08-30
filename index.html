@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aaravv's Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <!-- Created using fullPage.js (https://alvarotrigo.com/fullPage/) -->
+    </head>
+    <body>
+        <div id="fullpage">
+            <!-- Each section has a typing animation that starts on-scroll (except for the first one, because the user is already on that section). -->
+            <div class="section" id="hero">
+                <h1 id="hero-typed"></h1>
+            </div>
+            <div class="section">
+                <h1 id="aboutme-typed"></h1>
+            </div>
+            <div class="section">
+                <h1 id="projects-typed"></h1>
+            </div>
+            <div class="section">
+                <h1 id="achievements-typed"></h1>
+            </div>
+            <div class="section" id="last">
+                <h1 id="contactme-typed"></h1>
+                <footer>Copyright (c) Aaravv Chopra</footer>
+            </div>
+        </div>
+        <script
+            type="text/javascript"
+            src="tsparticles.all.bundle.min.js"
+        ></script>
+        <script type="text/javascript" src="typed.umd.js"></script>
+        <script type="text/javascript" src="tsp.js"></script>
+        <script type="text/javascript" src="typing.js"></script>
+        <script
+            type="text/javascript"
+            src="fullpage.extensions.min.js"
+        ></script>
+        <script>
+            // Fullpage.js code
+            var myFullpage = new fullpage("#fullpage", {
+                licenseKey: "put-license-here",
+                autoScrolling: true,
+                scrollHorizontally: true,
+                anchors: [
+                    "top",
+                    "aboutme",
+                    "myprojects",
+                    "competitions",
+                    "contact",
+                ],
+            });
+        </script>
+    </body>
+</html>

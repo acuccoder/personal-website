@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    font-family: Montserrat, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    color: white;
+}
+
+.section {
+    background-color: #000;
+}
+
+.section:not(p) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: blue;
+    width: 100vw;
+    bottom: 0;
+    position: absolute;
+}
