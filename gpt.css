@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "nord.css";
+
+:root {
+    --sans-serif: Montserrat, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    --monospace: "JetBrains Mono", monospace;
+    --text-color: white;
+    --background-color: var(--nord0);
+    --nav-background-color: var(--nord7);
+    --link-color: black;
+    --link-hover-decoration: underline;
+}
+
+body {
+    font-family: var(--monospace);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    text-align: center;
+    margin: 0; /* Ensure no default margin is applied */
+}
+
+h1#hero-typed {
+    font-size: 6em;
+}
+
+p#hero-typed {
+    font-size: 2em;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+nav {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    background-color: var(--nav-background-color);
+    padding: 10px;
+    box-shadow:
+        0px 1px 2px rgba(65, 234, 212, 0.5),
+        0px 2px 4px rgba(65, 234, 212, 0.5),
+        0px 4px 8px rgba(65, 234, 212, 0.5),
+        0px 8px 16px rgba(65, 234, 212, 0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 0 15px; /* Adjust padding as needed */
+}
+
+nav ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: var(--link-hover-decoration);
+}
+
+.section:not(:first-child) {
+    padding: 0 20vw; /* Use viewport width units for padding */
+}

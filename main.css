@@ -1,25 +1,125 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "nord.css";
+:root {
+    --sans-serif: Montserrat, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    --monospace: "Jetbrains Mono", monospace;
+}
 
 body {
-    font-family: Montserrat, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-        "Helvetica Neue", sans-serif;
+    font-family: var(--monospace);
     color: white;
+    background-color: var(--nord0);
+    text-align: center;
 }
 
-.section {
-    background-color: #000;
+h1#hero-typed {
+    font-size: 5em !important;
 }
 
-.section:not(p) {
+p#hero-typed {
+    font-size: 1.7em;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+nav {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+nav ul div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    list-style-type: none;
+    background-color: var(--nord7);
+    padding: 10px;
+    margin-right: 40px;
+    border-radius: 51vh;
+
+    /* box-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa; */
+    box-shadow:
+        0px 0px 2px rgba(143, 188, 187, 0.5),
+        0px 0px 4px rgba(143, 188, 187, 0.5),
+        0px 0px 8px rgba(143, 188, 187, 0.5),
+        0px 0px 16px rgba(143, 188, 187, 0.5);
 }
 
-footer {
-    background-color: blue;
-    width: 100vw;
-    bottom: 0;
-    position: absolute;
+nav ul div:first-child {
+    float: left;
+}
+
+nav ul div:last-child {
+    float: right;
+}
+
+nav ul div:last-child li {
+    padding: 0 15px;
+}
+
+nav ul div:first-child li {
+    padding: 0 10px;
+}
+
+nav ul div li a {
+    color: black;
+}
+
+#hamburger {
+    display: none;
+}
+
+.section:not(.section:first-child) {
+    padding: 0 20vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Media Queries */
+@media only screen and (max-width: 900px) {
+    /* Hiding the inline list elements on the right */
+    nav ul div li {
+        display: none;
+    }
+    nav ul div:first-child li {
+        display: block;
+    }
+    #hamburger {
+        display: flex;
+        flex-direction: column;
+    }
+    #hamburger span {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        border-radius: 51vh;
+    }
+    #hamburger span:first-child,
+    #hamburger span:nth-child(2) {
+        margin-bottom: 4px;
+    }
+    /* #hamburger span:last-child {
+        marg: 5px 0px;
+    } */
 }

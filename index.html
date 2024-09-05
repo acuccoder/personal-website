@@ -4,47 +4,71 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Aaravv's Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
+        <link rel="stylesheet" type="text/css" href="./fullpage.min.css" />
         <link rel="stylesheet" type="text/css" href="main.css" />
         <!-- Created using fullPage.js (https://alvarotrigo.com/fullPage/) -->
     </head>
     <body>
+        <nav>
+            <ul id="navigation">
+                <div>
+                    <li data-anchor="top">
+                        <a href="#top">Aaravv</a>
+                    </li>
+                </div>
+                <div>
+                    <li data-anchor="aboutme">
+                        <a href="#aboutme">About Me</a>
+                    </li>
+                    <li data-anchor="myprojects">
+                        <a href="#myprojects">My Projects</a>
+                    </li>
+                    <li data-anchor="competitions">
+                        <a href="#competitions">Competitions</a>
+                    </li>
+                    <li data-anchor="contact">
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li id="hamburger">
+                        <span></span><span></span><span></span>
+                    </li>
+                </div>
+            </ul>
+        </nav>
         <div id="fullpage">
             <!-- Each section has a typing animation that starts on-scroll (except for the first one, because the user is already on that section). -->
             <div class="section" id="hero">
                 <h1 id="hero-typed"></h1>
+                <p id="hero-typed"></p>
             </div>
             <div class="section">
                 <h1 id="aboutme-typed"></h1>
+                <p id="aboutme-typed"></p>
             </div>
             <div class="section">
                 <h1 id="projects-typed"></h1>
+                <p id="projects-typed"></p>
             </div>
             <div class="section">
                 <h1 id="achievements-typed"></h1>
+                <p id="achievements-typed"></p>
             </div>
             <div class="section" id="last">
                 <h1 id="contactme-typed"></h1>
-                <footer>Copyright (c) Aaravv Chopra</footer>
+                <p id="contactme-typed"></p>
+                <footer>Copyright &copy; Aaravv Chopra</footer>
             </div>
         </div>
-        <script
-            type="text/javascript"
-            src="tsparticles.all.bundle.min.js"
-        ></script>
         <script type="text/javascript" src="typed.umd.js"></script>
-        <script type="text/javascript" src="tsp.js"></script>
         <script type="text/javascript" src="typing.js"></script>
-        <script
-            type="text/javascript"
-            src="fullpage.extensions.min.js"
-        ></script>
+        <script type="text/javascript" src="fullpage.min.js"></script>
         <script>
+            placeHolder = document.getElementById("contact");
             // Fullpage.js code
             var myFullpage = new fullpage("#fullpage", {
+                responsiveWidth: 800,
                 licenseKey: "put-license-here",
                 autoScrolling: true,
-                scrollHorizontally: true,
                 anchors: [
                     "top",
                     "aboutme",
@@ -52,6 +76,12 @@
                     "competitions",
                     "contact",
                 ],
+                easingcss3: "cubic-bezier(0.175, 0.885, 0.320, 1.275)",
+                afterLoad: function (origin, destination, direction, trigger) {
+                    if (origin) {
+                        callTyping(destination.index);
+                    }
+                },
             });
         </script>
     </body>
