@@ -1,6 +1,43 @@
+const alreadyTyped = [false, false, false, false, false];
 function callTyping(section) {
-  if (section == 2) {
+  if (alreadyTyped[section]) {
+    return;
   }
+  if (section == 1) {
+    var aboutme_typed_h1 = new Typed("h1#aboutme-typed", {
+      strings: ["A Little Bit About Me"],
+      typeSpeed: 50,
+      showCursor: false,
+      onStringTyped: (arrayPos, self) => {
+        callSectionTwo(2);
+      },
+    });
+  } else if (section == 2) {
+    var projects_typed_h1 = new Typed("h1#projects-typed", {
+      strings: ["My Notable Projects"],
+      typeSpeed: 50,
+      showCursor: false,
+      onStringTyped: (arrayPos, self) => {
+        callSectionTwo(3);
+      },
+    });
+  } else if (section == 3) {
+    var competitions_typed_h1 = new Typed("h1#achievements-typed", {
+      strings: ["My Achievements and Competitions"],
+      typeSpeed: 50,
+      showCursor: false,
+      onStringTyped: (arrayPos, self) => {
+        callSectionTwo(4);
+      },
+    });
+  } else if (section == 4) {
+    var contact_typed_h1 = new Typed("h1#contactme-typed", {
+      strings: ["Contact Me"],
+      typeSpeed: 50,
+      showCursor: false,
+    });
+  }
+  alreadyTyped[section] = true;
 }
 
 function callSectionTwo(number) {
@@ -27,33 +64,4 @@ var hero_typed_h1 = new Typed("h1#hero-typed", {
   onStringTyped: (arrayPos, self) => {
     callSectionTwo(1);
   },
-});
-var aboutme_typed_h1 = new Typed("h1#aboutme-typed", {
-  strings: ["A Little Bit About Me"],
-  typeSpeed: 50,
-  showCursor: false,
-  onStringTyped: (arrayPos, self) => {
-    callSectionTwo(2);
-  },
-});
-var projects_typed_h1 = new Typed("h1#projects-typed", {
-  strings: ["My Notable Projects"],
-  typeSpeed: 50,
-  showCursor: false,
-  onStringTyped: (arrayPos, self) => {
-    callSectionTwo(3);
-  },
-});
-var competitions_typed_h1 = new Typed("h1#achievements-typed", {
-  strings: ["My Achievements and Competitions"],
-  typeSpeed: 50,
-  showCursor: false,
-  onStringTyped: (arrayPos, self) => {
-    callSectionTwo(4);
-  },
-});
-var contact_typed_h1 = new Typed("h1#contactme-typed", {
-  strings: ["Contact Me"],
-  typeSpeed: 50,
-  showCursor: false,
 });
