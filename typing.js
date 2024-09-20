@@ -48,9 +48,17 @@ function callSectionTwo(number) {
       showCursor: false,
     });
   } else if (number == 2) {
-    var hero_typed_p = new Typed("p#aboutme-typed", {
+    var aboutme_typed_p = new Typed("p#aboutme-typed", {
       strings: [
         "Hi! My name is Aaravv. I am Canadian and 11 years old. I like math, soccer, and coding. ",
+      ],
+      typeSpeed: 50,
+      showCursor: false,
+    });
+  } else if (number == 3) {
+    var projects_typed_p = new Typed("p#projects-typed", {
+      strings: [
+        "This page will be updated with new projects once I get around to working on them. For now, I don't have any useful projects except for some Scratch games.  ",
       ],
       typeSpeed: 50,
       showCursor: false,
