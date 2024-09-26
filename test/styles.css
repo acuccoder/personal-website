@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(
+            135deg,
+            rgba(58, 123, 213, 0.7),
+            rgba(0, 210, 255, 0.7)
+        ),
+        url("background.jpg");
+    background-size: cover;
+    color: white;
+}
+
+/* Pill Navbar */
+.pill-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: transparent;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+/* Navbar with rounded pill links */
+.pill-navbar ul {
+    list-style-type: none;
+    display: flex;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.2); /* Background of the pill */
+    border-radius: 50px; /* Makes it pill-shaped */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    transition: all 0.4s ease-in-out; /* Smooth transition when navbar changes */
+}
+
+.pill-navbar ul li {
+    margin: 0 10px;
+}
+
+.pill-navbar ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 50px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    transform: translateY(0); /* Default no movement */
+}
+
+/* Hover animations */
+.pill-navbar ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 0 25px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 255, 255, 0.6); /* Increased shadow */
+    transform: translateY(-5px); /* Subtle floating up */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Active segment glow */
+.pill-navbar ul li a:active {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 1),
+        0 0 40px rgba(255, 255, 255, 0.7);
+    transform: translateY(-5px); /* Keeps the floating effect */
+}
+
+/* Focus animation for keyboard navigation */
+.pill-navbar ul li a:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 1),
+        0 0 40px rgba(255, 255, 255, 0.7);
+}
+
+/* Navbar animation on load */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pill-navbar ul {
+    animation: fadeIn 1s ease forwards; /* Fades and slides in the navbar when loaded */
+}
+
+/* Subtle hover shadow increase without spinning */
+.pill-navbar ul li a:hover {
+    animation: none; /* Disable any rotation animation */
+    transform: translateY(-5px); /* Subtle floating up */
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.8),
+        0 0 25px rgba(255, 255, 255, 0.5); /* Soft, glowing shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+#skills ul {
+    list-style-type: none;
+}
+
+#skills ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.projects-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea,
+form button {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+form input,
+form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+form button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
